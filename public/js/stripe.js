@@ -8,7 +8,7 @@ export const bookTour = async (tourId) => {
     );
     window.location.assign(session.data.session.url);
   } catch (err) {
-    console.log(err.stack);
+    // console.log(err.stack);
     showAlert("error", err);
   }
 };
