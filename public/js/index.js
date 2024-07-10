@@ -4,8 +4,10 @@ import { displayMap } from "./mapbox";
 import { login, logout } from "./login";
 import { updateSettings } from "./updateSettings";
 import { bookTour } from "./stripe";
+import { signUp } from "./signup";
 
 // DOM ELEMENTS
+const createUserForm = document.querySelector(".form-create");
 const mapBox = document.getElementById("map");
 const loginForm = document.querySelector(".form--login");
 const logOutBtn = document.querySelector(".nav__el--logout");
@@ -66,4 +68,20 @@ if (bookBtn)
     const { tourId } = e.target.dataset;
     console.log(tourId);
     bookTour(tourId);
+  });
+
+// and this in the bottom of the file
+if (createUserForm)
+  createUserForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    document.querySelector(".btn--create--user").textContent = "Updating...";
+    const data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      passwordConfirm: document.getElementById("password-confirm").value,
+    };
+    console.log(data);
+
+    await signUp(data);
   });
