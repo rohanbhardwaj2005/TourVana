@@ -15,7 +15,8 @@
     "delete-data": "node dev-data/data/import-dev-data.js --delete",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /js",
-    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build": "parcel build ./public/js/index.js --out-dir dist"
   },
   "author": "Rohan Bhardwaj",
   "license": "ISC",
